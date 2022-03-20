@@ -1,3 +1,11 @@
+<h2>Swagger Screenshots</h2>
+<img src="screenshots/1.png" width="350">
+<img src="screenshots/2.PNG" width="350">
+<img src="screenshots/3.PNG" width="350">
+<img src="screenshots/4.PNG" width="350">
+
+
+
 Start the Project
 ==================================
 1. npm init -y
