@@ -1,8 +1,8 @@
 <h2>Swagger Screenshots</h2>
-<img src="screenshots/1.png" width="350">
-<img src="screenshots/2.PNG" width="350">
-<img src="screenshots/3.PNG" width="350">
-<img src="screenshots/4.PNG" width="350">
+<img src="screenshots/1.png">
+<img src="screenshots/2.PNG">
+<img src="screenshots/3.PNG">
+<img src="screenshots/4.PNG">
 
 
 
