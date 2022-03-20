@@ -1,0 +1,21 @@
+paths:
+  /deleteTask/{taskId}:
+    delete:
+      tags:        
+          - Task Entries
+      summary: Deletes a particular Task for all the recievers
+      parameters:
+        - in: path
+          name: taskId
+          required: true
+          schema:
+            type: integer
+            minimum: 1
+          description: Task Id to be deleted from system.
+      responses:
+        200:
+          description: Deleted
+        404:
+          description: Not Found
+        500:
+          description: Server Error

@@ -1,0 +1,55 @@
+openapi: 3.0.0
+info:
+  title: Task Creator
+  description: This module provides REST APIs for managing tasks for users
+  version: 1.0.0
+servers:
+  - url: /tasks
+    description: Dev server
+components:
+  components:
+  securitySchemes:
+    bearerAuth:
+      type: http
+      scheme: bearer
+      bearerFormat: JWT
+  schemas:
+    ResponseSchema:
+      type: object
+      additionalProperties: false
+      required:
+        - message
+      properties:
+        recipients:
+          description: Email Ids of all the people who should get this Task
+          type: array
+          minItems: 1
+          uniqueItems: true
+          collectionFormat: csv
+        sender :
+          description: Email Id of the person who is sending this Task
+          required: true
+          type: string
+        header :
+          description: Header of the Task
+          type: string
+        body :
+          description: Body of the Task
+          type: string
+        url :
+          description: URL for the Task
+          type: string
+        visibilityDate :
+          description: From when this Task should be visible. If not provided, will be visible rightaway.
+          type: string
+          format: date
+        expiryDate :
+          description: When should the Task expire. If not privided, will never expire.
+          type: string
+          format: date
+        sendPushNotification :
+          description: Whether to send push notifications to the recievers.
+          type: boolean
+          default: true
+security:
+  - bearerAuth: []

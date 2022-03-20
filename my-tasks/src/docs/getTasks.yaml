@@ -1,0 +1,62 @@
+paths:
+  /getTasks/:
+    get:
+      tags:        
+        - Task Entries
+      summary: Filter Tasks based on Filters. If nothing provided, all the tasks are returned.
+      produces:
+      - application/json
+      parameters:
+        - in: query
+          name: taskId
+          schema:
+            type: string
+        - in: query
+          name: recipient
+          schema:
+            type: string
+          description: Recipient's email address
+        - in: query
+          name: sender
+          schema:
+            type: string
+          description: Sender's email address
+        - in: query
+          name: startDate
+          schema:
+            type: string
+            format: date
+          description: If the creationDate is after startDate.
+        - in: query
+          name: endDate
+          schema:
+            type: string
+            format: date
+          description: If the creationDate is before endDate.
+        - in: query
+          name: pageNumber
+          schema:
+            type: string
+          description: Get entries on a particular page.
+        - in: query
+          name: size
+          schema:
+            type: string
+          description: Number of items on each page.
+        - in: query
+          name: sortBasis
+          schema:
+            type: string
+            enum: [taskId, creationDate, expiryDate]
+        - in: query
+          name: sort
+          schema:
+            type: string
+            enum: [ASC, DESC]
+      responses:
+        200:
+          description: Some results found
+        404:
+          description: Nothing Found
+        500:
+          description: Server Error
